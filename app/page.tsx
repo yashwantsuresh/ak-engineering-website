@@ -1,10 +1,17 @@
 const products = [
-  ["01", "Tamarind Processing Machine", "An efficient processing system engineered for consistent output, premium quality and cleaner tamarind handling."],
-  ["02", "Pepper Conveying Conveyor", "Smooth, hygienic pepper handling with durable construction, reliable movement and easy maintenance."],
-  ["03", "Circular Bottling Conveyor", "A continuous bottling conveyor with a compact circular layout, stable transfer and customizable design."],
-  ["04", "Chapati Machine", "Fully automatic chapati production equipment designed for high output, uniform results and easy cleaning."],
-  ["05", "Incline Conveyor", "Efficient vertical movement for food, beverage, packaging and material-handling applications."],
-  ["06", "Burner Stove", "A robust commercial burner stove built for powerful heat, fuel efficiency and long service life."],
+  ["01", "Belt Conveyor", "PVC, PU or rubber belt. MS / SS frame, 300-1200 mm width, variable speed and up to 100 kg/m load capacity."],
+  ["02", "Z-Type Conveyor", "PVC, PU or modular belt. MS / SS frame, 300-1000 mm belt width and up to 50 kg/m load capacity."],
+  ["03", "Modular Conveyor", "Plastic modular belt with MS / SS frame. 300-1200 mm belt width, variable speed and up to 80 kg/m load capacity."],
+  ["04", "Slat Conveyor", "Stainless-steel or plastic slat chain with SS frame. Custom length and 300-900 mm conveyor width."],
+  ["05", "Loading Conveyor", "Telescopic, mobile or fixed options with PVC / PU belt, custom length and adjustable lifting height."],
+  ["06", "Roller Conveyor", "Gravity or powered type, MS / SS rollers and frame, 50-76 mm roller diameter and custom length."],
+  ["07", "Bucket Conveyor", "SS or food-grade plastic buckets with SS / plastic modular chain. Custom height and 150-600 mm bucket width."],
+  ["08", "Screw Conveyor", "SS helical screw, SS / MS casing and custom conveyor length, diameter and width."],
+  ["09", "Mobile Conveyor", "PVC, PU or rubber belt with MS / SS frame, hydraulic height adjustment and inclination up to 45 degrees."],
+  ["10", "Spices Cleaning Machine", "For pepper, cardamom, cloves, cumin and coriander. 200-1500 kg/hr capacity with dust removal and impurity separation."],
+  ["11", "Tamarind Processing Machine", "Separates tamarind pulp from seeds and fibre. 100-1000 kg/hr capacity, SS 304 and hygienic, easy-clean design."],
+  ["12", "Cashew Kernel Grading Machine", "Multiple-grade cashew grading with 150-800 kg/hr capacity, 3/4/5 grading decks and adjustable grade sizes."],
+  ["13", "Amla Seed Removing Machine", "For amla / Indian gooseberry seed removal. 200-1000 kg/hr capacity, SS 304 and low-loss operation."],
 ];
 
 const industries = ["Food & Beverage", "Packaging", "Automotive", "Pharmaceutical", "Warehousing", "General Engineering"];
@@ -17,9 +24,14 @@ export default function Home() {
           <img className="brand-logo" src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering — Conveyors and Special Purpose Machines" />
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#products">Products</a><a href="#capabilities">Capabilities</a><a href="#industries">Industries</a><a href="#about">About</a>
+          <a href="#top">Home</a>
+          <a href="#about">Profile</a>
+          <a href="#products">Products</a>
+          <a href="#industries">Industries we serve</a>
+          <a href="#capabilities">News &amp; Events</a>
+          <a href="#products">Downloads</a>
+          <a className="nav-contact" href="#contact">Contact Us</a>
         </nav>
-        <a className="button button-small" href="#contact">Get a quote <span>↗</span></a>
       </header>
 
       <section className="hero" id="top">
