@@ -41,7 +41,7 @@ export default function Home() {
           <a className="nav-contact" href="#contact">Contact Us</a>
         </nav>
         <details className="mobile-menu">
-          <summary aria-label="Open navigation menu"><i /><i /><i /><span>Menu</span></summary>
+          <summary aria-label="Open navigation menu">Menu</summary>
           <div className="mobile-menu-links">
             <a href="#top">Home</a><a href="#about">Profile</a><a href="#products">Products</a>
             <a href="#industries">Industries we serve</a><a href="#capabilities">News &amp; Events</a>
