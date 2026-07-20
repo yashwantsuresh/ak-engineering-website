@@ -1,0 +1,72 @@
+const products = [
+  ["01", "Tamarind Processing Machine", "An efficient processing system engineered for consistent output, premium quality and cleaner tamarind handling."],
+  ["02", "Pepper Conveying Conveyor", "Smooth, hygienic pepper handling with durable construction, reliable movement and easy maintenance."],
+  ["03", "Circular Bottling Conveyor", "A continuous bottling conveyor with a compact circular layout, stable transfer and customizable design."],
+  ["04", "Chapati Machine", "Fully automatic chapati production equipment designed for high output, uniform results and easy cleaning."],
+  ["05", "Incline Conveyor", "Efficient vertical movement for food, beverage, packaging and material-handling applications."],
+  ["06", "Burner Stove", "A robust commercial burner stove built for powerful heat, fuel efficiency and long service life."],
+];
+
+const industries = ["Food & Beverage", "Packaging", "Automotive", "Pharmaceutical", "Warehousing", "General Engineering"];
+
+export default function Home() {
+  return (
+    <main>
+      <header className="site-header">
+        <a className="brand" href="#top" aria-label="AK Engineering home">
+          <img className="brand-logo" src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering — Conveyors and Special Purpose Machines" />
+        </a>
+        <nav aria-label="Primary navigation">
+          <a href="#products">Products</a><a href="#capabilities">Capabilities</a><a href="#industries">Industries</a><a href="#about">About</a>
+        </nav>
+        <a className="button button-small" href="#contact">Get a quote <span>↗</span></a>
+      </header>
+
+      <section className="hero" id="top">
+        <div className="hero-copy">
+          <p className="eyebrow"><span /> Engineered in Coimbatore · Made for industry</p>
+          <h1>Keep your<br />production <em>moving.</em></h1>
+          <p className="hero-lead">Conveyor and special purpose machine manufacturing for crop grading, material handling and custom industrial automation—built in India for dependable production.</p>
+          <div className="hero-actions"><a className="button" href="#contact">Start your project <span>↗</span></a><a className="text-link" href="#products">Explore solutions <span>↓</span></a></div>
+          <dl className="stats"><div><dt>Featured range</dt><dd>Processing, conveying & automation</dd></div><div><dt>Built to order</dt><dd>Designed around your line</dd></div><div><dt>Made in India</dt><dd>Engineered in Coimbatore</dd></div></dl>
+        </div>
+        <div className="machine-card" aria-label="Industrial conveyor illustration">
+          <div className="plate-head"><span>Production line / 01</span><span className="live"><i /> Accepting enquiries</span></div>
+          <div className="machine-visual">
+            <div className="belt"><span /><span /><span /><span /><span /></div>
+            <div className="rail rail-one" /><div className="rail rail-two" /><div className="leg leg-one" /><div className="leg leg-two" />
+            <div className="machine-label">AK / CONTINUOUS DUTY</div>
+          </div>
+          <div className="spec-grid"><div><small>APPLICATION</small><strong>Material handling</strong></div><div><small>CONFIGURATION</small><strong>Custom / made to order</strong></div><div><small>PRIORITY</small><strong>Uptime & service life</strong></div><div><small>SUPPORT</small><strong>Direct engineering access</strong></div></div>
+        </div>
+      </section>
+
+      <section className="ticker" aria-label="Core services"><span>TAMARIND PROCESSING</span><i>◆</i><span>PEPPER CONVEYING</span><i>◆</i><span>BOTTLING CONVEYORS</span><i>◆</i><span>CHAPATI MACHINES</span><i>◆</i><span>COMMERCIAL BURNERS</span></section>
+
+      <section className="section products" id="products">
+        <div className="section-heading"><div><p className="eyebrow"><span /> What we build</p><h2>One line.<br /><em>Every solution.</em></h2></div><p>From the moving surface to the supporting component, we engineer around the product you handle, the speed you need and the realities of your shop floor.</p></div>
+        <div className="product-grid">
+          {products.map(([number, title, description]) => <article className="product-card" key={number}><span className="number">{number}</span><div className="product-icon"><i /><i /><i /></div><h3>{title}</h3><p>{description}</p><a href="#contact">Discuss this solution <span>↗</span></a></article>)}
+        </div>
+      </section>
+
+      <section className="capabilities" id="capabilities">
+        <div className="cap-copy"><p className="eyebrow light"><span /> Why AK Engineering</p><h2>Built around<br />your line—not<br />a catalogue.</h2><p>Every project begins with the application: material, throughput, duty cycle, space and service access. The result is practical engineering that earns its place on the floor.</p><a className="button white" href="#contact">Talk to an engineer <span>↗</span></a></div>
+        <div className="cap-list">
+          <article><span>01</span><div><h3>Application-first design</h3><p>Geometry, transfer height and layouts planned around your actual process.</p></div></article>
+          <article><span>02</span><div><h3>Continuous-duty thinking</h3><p>Robust frames and serviceable components selected for dependable uptime.</p></div></article>
+          <article><span>03</span><div><h3>Sustainable efficiency</h3><p>Long service life, maintainable systems and smarter product movement.</p></div></article>
+          <article><span>04</span><div><h3>Workshop-direct support</h3><p>Discuss the project with the same team responsible for the build.</p></div></article>
+        </div>
+      </section>
+
+      <section className="section industries" id="industries"><div className="section-heading compact"><div><p className="eyebrow"><span /> Industries served</p><h2>Ready for the<br /><em>real world.</em></h2></div><p>Versatile solutions for production environments where hygiene, precision, durability and uptime matter.</p></div><div className="industry-list">{industries.map((item, index) => <div key={item}><span>0{index + 1}</span><strong>{item}</strong><i>↗</i></div>)}</div></section>
+
+      <section className="about" id="about"><div className="about-visual"><div className="stamp"><strong>AK</strong><small>ENGINEERED<br />TO RUN</small></div><p>COIMBATORE · TAMIL NADU · INDIA</p></div><div className="about-copy"><p className="eyebrow"><span /> About the workshop</p><h2>Engineering that starts on the floor.</h2><p>AK Engineering designs and builds conveyors, special purpose machines and automation solutions for production teams that cannot afford avoidable downtime.</p><p>By combining custom fabrication with a complete range of conveyor technologies and components, we make it easier to specify, build, maintain and expand a dependable line.</p><div className="about-points"><div><strong>Process-first</strong><span>Built for the application</span></div><div><strong>Made in India</strong><span>Direct workshop oversight</span></div></div></div></section>
+
+      <section className="contact" id="contact"><div><p className="eyebrow light"><span /> Project enquiries</p><h2>Let’s build the line<br />that moves your business.</h2><p>Share your product type, target capacity and available footprint. We’ll help define the right conveyor or custom machine approach.</p><div className="contact-direct"><a href="tel:+919952551805">Call: +91 99525 51805</a><a href="mailto:akengineeringscbe@gmail.com">akengineeringscbe@gmail.com</a></div></div><form><label>Name<input type="text" placeholder="Your name" /></label><label>Work email<input type="email" placeholder="name@company.com" /></label><label>Project requirement<textarea placeholder="Tell us what you need to move, sort or automate" rows={4} /></label><a className="button white" href="mailto:akengineeringscbe@gmail.com?subject=Website%20Enquiry%20for%20AK%20Engineering">Send enquiry <span>↗</span></a></form></section>
+
+      <footer><div className="brand footer-brand"><img className="brand-logo footer-logo" src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering — Conveyors and Special Purpose Machines" /></div><div><strong>Workshop</strong><p>Pattanam Road, Sulur<br />Coimbatore, Tamil Nadu 641016</p></div><div><strong>Connect</strong><p><a href="tel:+919952551805">+91 99525 51805</a><br /><a href="mailto:akengineeringscbe@gmail.com">akengineeringscbe@gmail.com</a><br /><a className="instagram-link" href="https://www.instagram.com/akengineeringscbe?igsh=dTFkcnJidWd5bHlr" target="_blank" rel="noreferrer">Instagram ↗</a></p></div><p className="copyright">© 2026 AK Engineering</p></footer>
+    </main>
+  );
+}
