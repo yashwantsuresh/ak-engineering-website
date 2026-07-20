@@ -14,6 +14,14 @@ const products = [
   ["13", "Amla Seed Removing Machine", "For amla / Indian gooseberry seed removal. 200-1000 kg/hr capacity, SS 304 and low-loss operation."],
 ];
 
+const productPhotos = [
+  "/products/belt-conveyor.jpg", "/products/z-type-conveyor.jpg", "/products/modular-conveyor.jpg",
+  "/products/slat-conveyor.jpg", "/products/loading-conveyor.jpg", "/products/roller-conveyor.jpg",
+  "/products/bucket-conveyor.jpg", "/products/screw-conveyor.jpg", "/products/mobile-conveyor.jpg",
+  "/products/spices-cleaning-machine.jpg", "/products/tamarind-processing-machine.jpg",
+  "/products/cashew-kernel-grading-machine.jpg", "/products/amla-seed-removing-machine.jpg",
+];
+
 const industries = ["Food & Beverage", "Packaging", "Automotive", "Pharmaceutical", "Warehousing", "General Engineering"];
 
 export default function Home() {
@@ -58,7 +66,7 @@ export default function Home() {
       <section className="section products" id="products">
         <div className="section-heading"><div><p className="eyebrow"><span /> What we build</p><h2>One line.<br /><em>Every solution.</em></h2></div><p>From the moving surface to the supporting component, we engineer around the product you handle, the speed you need and the realities of your shop floor.</p></div>
         <div className="product-grid">
-          {products.map(([number, title, description]) => <article className="product-card" key={number}><span className="number">{number}</span><div className="product-icon"><i /><i /><i /></div><h3>{title}</h3><p>{description}</p><a href="#contact">Discuss this solution <span>↗</span></a></article>)}
+          {products.map(([number, title, description], index) => <article className="product-card" key={number}><span className="number">{number}</span><div className="product-photo"><img src={productPhotos[index]} alt={title} /></div><h3>{title}</h3><p>{description}</p><a href="#contact">Discuss this solution <span>↗</span></a></article>)}
         </div>
       </section>
 
