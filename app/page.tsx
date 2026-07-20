@@ -40,6 +40,14 @@ export default function Home() {
           <a href="#products">Downloads</a>
           <a className="nav-contact" href="#contact">Contact Us</a>
         </nav>
+        <details className="mobile-menu">
+          <summary aria-label="Open navigation menu"><i /><i /><i /><span>Menu</span></summary>
+          <div className="mobile-menu-links">
+            <a href="#top">Home</a><a href="#about">Profile</a><a href="#products">Products</a>
+            <a href="#industries">Industries we serve</a><a href="#capabilities">News &amp; Events</a>
+            <a href="#products">Downloads</a><a href="#contact">Contact Us</a>
+          </div>
+        </details>
       </header>
 
       <section className="hero" id="top">
