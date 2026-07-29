@@ -57,7 +57,7 @@ export default function Home() {
           <a href="#products">Products</a>
           <a href="#industries">Industries we serve</a>
           <a href="#capabilities">News &amp; Events</a>
-          <a href="#products">Downloads</a>
+          <a href="#downloads">Downloads</a>
           <a className="nav-contact" href="#contact">Contact Us</a>
         </nav>
         <details className="mobile-menu">
@@ -65,7 +65,7 @@ export default function Home() {
           <div className="mobile-menu-links">
             <a href="#top">Home</a><a href="#about">Profile</a><a href="#products">Products</a>
             <a href="#industries">Industries we serve</a><a href="#capabilities">News &amp; Events</a>
-            <a href="#products">Downloads</a><a href="#contact">Contact Us</a>
+            <a href="#downloads">Downloads</a><a href="#contact">Contact Us</a>
           </div>
         </details>
       </header>
@@ -106,6 +106,11 @@ export default function Home() {
           <article><span>03</span><div><h3>Sustainable efficiency</h3><p>Long service life, maintainable systems and smarter product movement.</p></div></article>
           <article><span>04</span><div><h3>Workshop-direct support</h3><p>Discuss the project with the same team responsible for the build.</p></div></article>
         </div>
+      </section>
+
+      <section className="section downloads" id="downloads">
+        <div><p className="eyebrow"><span /> Product catalogue</p><h2>See the full<br /><em>AK range.</em></h2><p>Download the AK Engineering catalogue for conveyor systems, food-processing machines and custom automation solutions.</p><a className="button" href="/AK-Engineering-Catalogue.pdf" download>Download catalogue <span>↓</span></a></div>
+        <div className="download-card"><span>PDF / 2026</span><strong>AK Engineering<br />Product Catalogue</strong><p>Conveyors · Processing machines · Custom automation</p></div>
       </section>
 
       <section className="section industries" id="industries"><div className="section-heading compact"><div><p className="eyebrow"><span /> Industries served</p><h2>Ready for the<br /><em>real world.</em></h2></div><p>Versatile solutions for production environments where hygiene, precision, durability and uptime matter.</p></div><div className="industry-list">{industries.map((item, index) => <div key={item}><span>0{index + 1}</span><strong>{item}</strong><i>↗</i></div>)}</div></section>
