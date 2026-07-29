@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 const products = [
   ["01", "Belt Conveyor", "PVC, PU or rubber belt. MS / SS frame, 300-1200 mm width, variable speed and up to 100 kg/m load capacity."],
   ["02", "Z-Type Conveyor", "PVC, PU or modular belt. MS / SS frame, 300-1000 mm belt width and up to 50 kg/m load capacity."],
@@ -22,9 +26,25 @@ const productPhotos = [
   "/products/cashew-kernel-grading-machine.jpg", "/products/amla-seed-removing-machine.jpg",
 ];
 
+const heroModels = [
+  { number: "01", title: "Belt Conveyor", photo: "/products/belt-conveyor.jpg", application: "Material handling", configuration: "PVC / PU / rubber belt" },
+  { number: "02", title: "Z-Type Conveyor", photo: "/products/z-type-conveyor.jpg", application: "Elevated product transfer", configuration: "Modular incline belt" },
+  { number: "03", title: "Slat Conveyor", photo: "/products/slat-conveyor.jpg", application: "Bottling & packaging", configuration: "SS / plastic slat chain" },
+  { number: "04", title: "Roller Conveyor", photo: "/products/roller-conveyor.jpg", application: "Carton & pallet movement", configuration: "Gravity / powered rollers" },
+  { number: "05", title: "Mobile Conveyor", photo: "/products/mobile-conveyor.jpg", application: "Flexible line loading", configuration: "Hydraulic height adjustment" },
+];
+
 const industries = ["Food & Beverage", "Packaging", "Automotive", "Pharmaceutical", "Warehousing", "General Engineering"];
 
 export default function Home() {
+  const [activeModelIndex, setActiveModelIndex] = useState(0);
+  const activeModel = heroModels[activeModelIndex];
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setActiveModelIndex((current) => (current + 1) % heroModels.length), 4200);
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <main>
       <header className="site-header">
@@ -58,14 +78,14 @@ export default function Home() {
           <div className="hero-actions"><a className="button" href="#contact">Start your project <span>↗</span></a><a className="text-link" href="#products">Explore solutions <span>↓</span></a></div>
           <dl className="stats"><div><dt>Featured range</dt><dd>Processing, conveying & automation</dd></div><div><dt>Built to order</dt><dd>Designed around your line</dd></div><div><dt>Made in India</dt><dd>Engineered in Coimbatore</dd></div></dl>
         </div>
-        <div className="machine-card" aria-label="Industrial conveyor illustration">
-          <div className="plate-head"><span>Production line / 01</span><span className="live"><i /> Accepting enquiries</span></div>
-          <div className="machine-visual">
-            <div className="belt"><span /><span /><span /><span /><span /></div>
-            <div className="rail rail-one" /><div className="rail rail-two" /><div className="leg leg-one" /><div className="leg leg-two" />
-            <div className="machine-label">AK / CONTINUOUS DUTY</div>
+        <div className="machine-card" aria-label="Automatic conveyor model showcase">
+          <div className="plate-head"><span>Model / {activeModel.number}</span><span className="live"><i /> Live product showcase</span></div>
+          <div className="machine-visual conveyor-slider">
+            <img className="slider-machine-photo" key={activeModel.photo} src={activeModel.photo} alt={activeModel.title} />
+            <div className="slider-caption"><small>AK ENGINEERING</small><strong>{activeModel.title}</strong></div>
+            <div className="slider-dots" aria-label="Choose a conveyor model">{heroModels.map((model, index) => <button key={model.title} className={index === activeModelIndex ? "active" : ""} onClick={() => setActiveModelIndex(index)} aria-label={`Show ${model.title}`} />)}</div>
           </div>
-          <div className="spec-grid"><div><small>APPLICATION</small><strong>Material handling</strong></div><div><small>CONFIGURATION</small><strong>Custom / made to order</strong></div><div><small>PRIORITY</small><strong>Uptime & service life</strong></div><div><small>SUPPORT</small><strong>Direct engineering access</strong></div></div>
+          <div className="spec-grid"><div><small>APPLICATION</small><strong>{activeModel.application}</strong></div><div><small>CONFIGURATION</small><strong>{activeModel.configuration}</strong></div><div><small>PRIORITY</small><strong>Uptime & service life</strong></div><div><small>SUPPORT</small><strong>Direct engineering access</strong></div></div>
         </div>
       </section>
 
