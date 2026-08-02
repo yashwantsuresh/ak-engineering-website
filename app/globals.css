@@ -71,3 +71,17 @@
 @keyframes industrySlide{from{opacity:0;transform:scale(1.025) translateX(14px)}to{opacity:1;transform:scale(1) translateX(0)}}
 @media(max-width:1000px){.industry-showcase{grid-template-columns:1fr}.industry-display{border-right:0}.industry-selector{display:grid;grid-template-columns:1fr 1fr}.industry-selector button{min-height:76px;border-right:1px solid var(--line)}.industry-visual,.industry-visual img{height:420px;min-height:420px}}
 @media(max-width:620px){.industry-display-head{height:52px;padding:0 15px;font-size:8px}.industry-visual,.industry-visual img{height:285px;min-height:285px}.industry-caption{left:14px;bottom:15px;min-width:0;max-width:70%;padding:10px 12px}.industry-caption strong{font-size:17px}.industry-dots{right:14px;bottom:18px;gap:5px}.industry-dots button{width:7px;height:7px}.industry-dots button.active{width:20px}.industry-spec-grid{grid-template-columns:1fr}.industry-spec-grid div{min-height:0;padding:16px;border-right:0}.industry-selector{grid-template-columns:1fr}.industry-selector button{min-height:64px;padding:14px 16px;border-right:0}.industry-selector strong{font-size:17px}.industries-page .industry-showcase{margin-top:40px}}
+
+/* Direct website enquiry form */
+.contact-form{display:grid;gap:18px;padding:32px;background:#e8ebee;border:1px solid var(--line)}
+.contact .contact-form{padding:0;background:transparent;border:0}
+.contact-form label{font:9px monospace;letter-spacing:.14em;color:#666e76;text-transform:uppercase}
+.contact-form input,.contact-form textarea{display:block;width:100%;margin-top:8px;background:#fff;border:1px solid #cbd0d5;color:#33383d;padding:15px;font:14px var(--body);outline:none;resize:vertical}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px #e31b2312}
+.contact-form .button{width:100%}.contact-form .form-honey{display:none!important}
+.form-note{margin:0;color:#747b82;font-size:11px;line-height:1.5}
+.contact-page-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;max-width:1120px;align-items:start}
+.contact-page-layout .contact-page-card{grid-template-columns:1fr;width:100%}
+.contact-page-layout .button.white{background:var(--red);color:#fff}.contact-page-layout .button.white:hover{background:#bd151c;color:#fff}
+.thank-you-page{display:flex;flex-direction:column;justify-content:center}.thank-you-page h1{max-width:900px}.thank-you-actions{display:flex;align-items:center;gap:28px;margin-top:12px}
+@media(max-width:800px){.contact-page-layout{grid-template-columns:1fr}.contact-form{padding:24px}.thank-you-actions{align-items:flex-start;flex-direction:column}}

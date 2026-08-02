@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { SiteFooter, SiteHeader } from "./components/SiteShell";
 import { IndustryShowcase } from "./components/IndustryShowcase";
+import { ContactForm } from "./components/ContactForm";
 
 const products = [
   ["01", "Belt Conveyor", "PVC, PU or rubber belt. MS / SS frame, 300-1200 mm width, variable speed and up to 100 kg/m load capacity."],
@@ -96,7 +97,7 @@ export default function Home() {
 
       <section className="about" id="about"><div className="about-visual"><div className="about-logo-panel"><img src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering logo" /></div><p>COIMBATORE · TAMIL NADU · INDIA</p></div><div className="about-copy"><p className="eyebrow"><span /> About the workshop</p><h2>Engineering that starts on the floor.</h2><p>AK Engineering designs and builds conveyors, special purpose machines and automation solutions for production teams that cannot afford avoidable downtime.</p><p>By combining custom fabrication with a complete range of conveyor technologies and components, we make it easier to specify, build, maintain and expand a dependable line.</p><div className="about-points"><div><strong>Process-first</strong><span>Built for the application</span></div><div><strong>Made in India</strong><span>Direct workshop oversight</span></div></div></div></section>
 
-      <section className="contact" id="contact"><div><p className="eyebrow light"><span /> Project enquiries</p><h2>Let’s build the line<br />that moves your business.</h2><p>Share your product type, target capacity and available footprint. We’ll help define the right conveyor or custom machine approach.</p><div className="contact-direct"><a href="tel:+919952551805">Call: +91 99525 51805</a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=akengineeringscbe@gmail.com&su=AK%20Engineering%20Enquiry" target="_blank" rel="noreferrer">akengineeringscbe@gmail.com</a></div></div><form><label>Name<input type="text" placeholder="Your name" /></label><label>Work email<input type="email" placeholder="name@company.com" /></label><label>Project requirement<textarea placeholder="Tell us what you need to move, sort or automate" rows={4} /></label><a className="button white" href="https://mail.google.com/mail/?view=cm&fs=1&to=akengineeringscbe@gmail.com&su=Website%20Enquiry%20for%20AK%20Engineering" target="_blank" rel="noreferrer">Send enquiry <span>↗</span></a></form></section>
+      <section className="contact" id="contact"><div><p className="eyebrow light"><span /> Project enquiries</p><h2>Let’s build the line<br />that moves your business.</h2><p>Share your product type, target capacity and available footprint. We’ll help define the right conveyor or custom machine approach.</p><div className="contact-direct"><a href="tel:+919952551805">Call: +91 99525 51805</a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=akengineeringscbe@gmail.com&su=AK%20Engineering%20Enquiry" target="_blank" rel="noreferrer">akengineeringscbe@gmail.com</a></div></div><ContactForm compact /></section>
 
       <SiteFooter />
     </main>
