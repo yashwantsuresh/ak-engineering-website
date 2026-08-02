@@ -19,18 +19,18 @@ const products = [
 ];
 
 const productPhotos = [
-  "/products/belt-conveyor.jpg", "/products/z-type-conveyor.jpg", "/products/modular-conveyor.jpg",
-  "/products/slat-conveyor.jpg", "/products/loading-conveyor.jpg", "/products/roller-conveyor.jpg",
+  "/products/clean-belt-conveyor.png", "/products/clean-incline-conveyor.png", "/products/modular-conveyor.jpg",
+  "/products/slat-conveyor.jpg", "/products/loading-conveyor.jpg", "/products/clean-roller-conveyor.png",
   "/products/bucket-conveyor.jpg", "/products/screw-conveyor.jpg", "/products/mobile-conveyor.jpg",
   "/products/spices-cleaning-machine.jpg", "/products/tamarind-processing-machine.jpg",
   "/products/cashew-kernel-grading-machine.jpg", "/products/amla-seed-removing-machine.jpg",
 ];
 
 const heroModels = [
-  { number: "01", title: "Belt Conveyor", photo: "/products/belt-conveyor.jpg", application: "Material handling", configuration: "PVC / PU / rubber belt" },
-  { number: "02", title: "Z-Type Conveyor", photo: "/products/z-type-conveyor.jpg", application: "Elevated product transfer", configuration: "Modular incline belt" },
+  { number: "01", title: "Belt Conveyor", photo: "/products/clean-belt-conveyor.png", application: "Material handling", configuration: "PVC / PU / rubber belt" },
+  { number: "02", title: "Z-Type Conveyor", photo: "/products/clean-incline-conveyor.png", application: "Elevated product transfer", configuration: "Modular incline belt" },
   { number: "03", title: "Slat Conveyor", photo: "/products/slat-conveyor.jpg", application: "Bottling & packaging", configuration: "SS / plastic slat chain" },
-  { number: "04", title: "Roller Conveyor", photo: "/products/roller-conveyor.jpg", application: "Carton & pallet movement", configuration: "Gravity / powered rollers" },
+  { number: "04", title: "Roller Conveyor", photo: "/products/clean-roller-conveyor.png", application: "Carton & pallet movement", configuration: "Gravity / powered rollers" },
   { number: "05", title: "Mobile Conveyor", photo: "/products/mobile-conveyor.jpg", application: "Flexible line loading", configuration: "Hydraulic height adjustment" },
 ];
 
