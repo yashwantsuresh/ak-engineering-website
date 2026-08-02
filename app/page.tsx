@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SiteFooter, SiteHeader } from "./components/SiteShell";
 
 const products = [
   ["01", "Belt Conveyor", "PVC, PU or rubber belt. MS / SS frame, 300-1200 mm width, variable speed and up to 100 kg/m load capacity."],
@@ -19,19 +20,19 @@ const products = [
 ];
 
 const productPhotos = [
-  "/products/clean-belt-conveyor.png", "/products/clean-incline-conveyor.png", "/products/modular-conveyor.jpg",
-  "/products/slat-conveyor.jpg", "/products/loading-conveyor.jpg", "/products/clean-roller-conveyor.png",
-  "/products/bucket-conveyor.jpg", "/products/screw-conveyor.jpg", "/products/mobile-conveyor.jpg",
-  "/products/spices-cleaning-machine.jpg", "/products/tamarind-processing-machine.jpg",
-  "/products/cashew-kernel-grading-machine.jpg", "/products/amla-seed-removing-machine.jpg",
+  "/products/clean-belt-conveyor.png", "/products/clean-incline-conveyor.png", "/products/clean-modular-conveyor.png",
+  "/products/clean-slat-conveyor.png", "/products/clean-loading-conveyor.png", "/products/clean-roller-conveyor.png",
+  "/products/clean-bucket-conveyor.png", "/products/clean-screw-conveyor.png", "/products/clean-mobile-conveyor.png",
+  "/products/clean-spices-machine.png", "/products/clean-tamarind-machine.png",
+  "/products/clean-cashew-grading-machine.png", "/products/clean-amla-seed-machine.png",
 ];
 
 const heroModels = [
   { number: "01", title: "Belt Conveyor", photo: "/products/clean-belt-conveyor.png", application: "Material handling", configuration: "PVC / PU / rubber belt" },
   { number: "02", title: "Z-Type Conveyor", photo: "/products/clean-incline-conveyor.png", application: "Elevated product transfer", configuration: "Modular incline belt" },
-  { number: "03", title: "Slat Conveyor", photo: "/products/slat-conveyor.jpg", application: "Bottling & packaging", configuration: "SS / plastic slat chain" },
+  { number: "03", title: "Slat Conveyor", photo: "/products/clean-slat-conveyor.png", application: "Bottling & packaging", configuration: "SS / plastic slat chain" },
   { number: "04", title: "Roller Conveyor", photo: "/products/clean-roller-conveyor.png", application: "Carton & pallet movement", configuration: "Gravity / powered rollers" },
-  { number: "05", title: "Mobile Conveyor", photo: "/products/mobile-conveyor.jpg", application: "Flexible line loading", configuration: "Hydraulic height adjustment" },
+  { number: "05", title: "Mobile Conveyor", photo: "/products/clean-mobile-conveyor.png", application: "Flexible line loading", configuration: "Hydraulic height adjustment" },
 ];
 
 const industries = ["Food & Beverage", "Packaging", "Automotive", "Pharmaceutical", "Warehousing", "General Engineering"];
@@ -47,28 +48,7 @@ export default function Home() {
 
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="AK Engineering home">
-          <img className="brand-logo" src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering — Conveyors and Special Purpose Machines" />
-        </a>
-        <nav aria-label="Primary navigation">
-          <a href="#top">Home</a>
-          <a href="/profile">Profile</a>
-          <a href="/products">Products</a>
-          <a href="/industries">Industries we serve</a>
-          <a href="/profile">News &amp; Events</a>
-          <a href="/downloads">Downloads</a>
-          <a className="nav-contact" href="/contact">Contact Us</a>
-        </nav>
-        <details className="mobile-menu">
-          <summary aria-label="Open navigation menu">Menu</summary>
-          <div className="mobile-menu-links">
-            <a href="/">Home</a><a href="/profile">Profile</a><a href="/products">Products</a>
-            <a href="/industries">Industries we serve</a><a href="/profile">News &amp; Events</a>
-            <a href="/downloads">Downloads</a><a href="/contact">Contact Us</a>
-          </div>
-        </details>
-      </header>
+      <SiteHeader />
 
       <section className="hero" id="top">
         <div className="hero-copy">
@@ -115,11 +95,11 @@ export default function Home() {
 
       <section className="section industries" id="industries"><div className="section-heading compact"><div><p className="eyebrow"><span /> Industries served</p><h2>Ready for the<br /><em>real world.</em></h2></div><p>Versatile solutions for production environments where hygiene, precision, durability and uptime matter.</p></div><div className="industry-list">{industries.map((item, index) => <div key={item}><span>0{index + 1}</span><strong>{item}</strong><i>↗</i></div>)}</div></section>
 
-      <section className="about" id="about"><div className="about-visual"><div className="stamp"><strong>AK</strong><small>ENGINEERED<br />TO RUN</small></div><p>COIMBATORE · TAMIL NADU · INDIA</p></div><div className="about-copy"><p className="eyebrow"><span /> About the workshop</p><h2>Engineering that starts on the floor.</h2><p>AK Engineering designs and builds conveyors, special purpose machines and automation solutions for production teams that cannot afford avoidable downtime.</p><p>By combining custom fabrication with a complete range of conveyor technologies and components, we make it easier to specify, build, maintain and expand a dependable line.</p><div className="about-points"><div><strong>Process-first</strong><span>Built for the application</span></div><div><strong>Made in India</strong><span>Direct workshop oversight</span></div></div></div></section>
+      <section className="about" id="about"><div className="about-visual"><div className="about-logo-panel"><img src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering logo" /></div><p>COIMBATORE · TAMIL NADU · INDIA</p></div><div className="about-copy"><p className="eyebrow"><span /> About the workshop</p><h2>Engineering that starts on the floor.</h2><p>AK Engineering designs and builds conveyors, special purpose machines and automation solutions for production teams that cannot afford avoidable downtime.</p><p>By combining custom fabrication with a complete range of conveyor technologies and components, we make it easier to specify, build, maintain and expand a dependable line.</p><div className="about-points"><div><strong>Process-first</strong><span>Built for the application</span></div><div><strong>Made in India</strong><span>Direct workshop oversight</span></div></div></div></section>
 
       <section className="contact" id="contact"><div><p className="eyebrow light"><span /> Project enquiries</p><h2>Let’s build the line<br />that moves your business.</h2><p>Share your product type, target capacity and available footprint. We’ll help define the right conveyor or custom machine approach.</p><div className="contact-direct"><a href="tel:+919952551805">Call: +91 99525 51805</a><a href="mailto:akengineeringscbe@gmail.com">akengineeringscbe@gmail.com</a></div></div><form><label>Name<input type="text" placeholder="Your name" /></label><label>Work email<input type="email" placeholder="name@company.com" /></label><label>Project requirement<textarea placeholder="Tell us what you need to move, sort or automate" rows={4} /></label><a className="button white" href="mailto:akengineeringscbe@gmail.com?subject=Website%20Enquiry%20for%20AK%20Engineering">Send enquiry <span>↗</span></a></form></section>
 
-      <footer><div className="brand footer-brand"><img className="brand-logo footer-logo" src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering — Conveyors and Special Purpose Machines" /></div><div><strong>Workshop</strong><p>Pattanam Road, Sulur<br />Coimbatore, Tamil Nadu 641016</p></div><div><strong>Connect</strong><p><a href="tel:+919952551805">+91 99525 51805</a><br /><a href="mailto:akengineeringscbe@gmail.com">akengineeringscbe@gmail.com</a><br /><a className="instagram-link" href="https://www.instagram.com/akengineeringscbe?igsh=dTFkcnJidWd5bHlr" target="_blank" rel="noreferrer">Instagram ↗</a></p></div><p className="copyright">© 2026 AK Engineering</p></footer>
+      <SiteFooter />
     </main>
   );
 }

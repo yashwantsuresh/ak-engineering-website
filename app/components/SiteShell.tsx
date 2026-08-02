@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
   ["Home", "/"], ["Profile", "/profile"], ["Products", "/products"],
@@ -6,11 +9,12 @@ const links = [
 ];
 
 export function SiteHeader() {
-  return <header className="site-header">
+  const pathname = usePathname();
+  return <><div className="desktop-topbar"><span>Conveyors · Special Purpose Machines · Automation</span><div><a href="tel:+919952551805">+91 99525 51805</a><a href="mailto:akengineeringscbe@gmail.com">akengineeringscbe@gmail.com</a></div></div><header className="site-header">
     <Link className="brand" href="/" aria-label="AK Engineering home"><img className="brand-logo" src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering" /></Link>
-    <nav aria-label="Primary navigation">{links.map(([label, href]) => <Link className={label === "Contact Us" ? "nav-contact" : ""} href={href} key={href}>{label}</Link>)}</nav>
-    <details className="mobile-menu"><summary aria-label="Open navigation menu">Menu</summary><div className="mobile-menu-links">{links.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</div></details>
-  </header>;
+    <nav aria-label="Primary navigation">{links.map(([label, href]) => <Link className={`${pathname === href ? "active" : ""} ${label === "Contact Us" ? "nav-contact" : ""}`.trim()} href={href} key={href}>{label}</Link>)}</nav>
+    <details className="mobile-menu"><summary aria-label="Open navigation menu">Menu</summary><div className="mobile-menu-links">{links.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href}>{label}</Link>)}</div></details>
+  </header></>;
 }
 
 export function SiteFooter() {
