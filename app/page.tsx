@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { SiteFooter, SiteHeader } from "./components/SiteShell";
+import { IndustryShowcase } from "./components/IndustryShowcase";
 
 const products = [
   ["01", "Belt Conveyor", "PVC, PU or rubber belt. MS / SS frame, 300-1200 mm width, variable speed and up to 100 kg/m load capacity."],
@@ -34,8 +35,6 @@ const heroModels = [
   { number: "04", title: "Roller Conveyor", photo: "/products/clean-roller-conveyor.png", application: "Carton & pallet movement", configuration: "Gravity / powered rollers" },
   { number: "05", title: "Mobile Conveyor", photo: "/products/clean-mobile-conveyor.png", application: "Flexible line loading", configuration: "Hydraulic height adjustment" },
 ];
-
-const industries = ["Food & Beverage", "Packaging", "Automotive", "Pharmaceutical", "Warehousing", "General Engineering"];
 
 export default function Home() {
   const [activeModelIndex, setActiveModelIndex] = useState(0);
@@ -93,7 +92,7 @@ export default function Home() {
         <div className="download-card"><span>PDF / 2026</span><strong>AK Engineering<br />Product Catalogue</strong><p>Conveyors · Processing machines · Custom automation</p></div>
       </section>
 
-      <section className="section industries" id="industries"><div className="section-heading compact"><div><p className="eyebrow"><span /> Industries served</p><h2>Ready for the<br /><em>real world.</em></h2></div><p>Versatile solutions for production environments where hygiene, precision, durability and uptime matter.</p></div><div className="industry-list">{industries.map((item, index) => <div key={item}><span>0{index + 1}</span><strong>{item}</strong><i>↗</i></div>)}</div></section>
+      <section className="section industries" id="industries"><div className="section-heading compact"><div><p className="eyebrow"><span /> Industries served</p><h2>Ready for the<br /><em>real world.</em></h2></div><p>Versatile solutions for production environments where hygiene, precision, durability and uptime matter.</p></div><IndustryShowcase /></section>
 
       <section className="about" id="about"><div className="about-visual"><div className="about-logo-panel"><img src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering logo" /></div><p>COIMBATORE · TAMIL NADU · INDIA</p></div><div className="about-copy"><p className="eyebrow"><span /> About the workshop</p><h2>Engineering that starts on the floor.</h2><p>AK Engineering designs and builds conveyors, special purpose machines and automation solutions for production teams that cannot afford avoidable downtime.</p><p>By combining custom fabrication with a complete range of conveyor technologies and components, we make it easier to specify, build, maintain and expand a dependable line.</p><div className="about-points"><div><strong>Process-first</strong><span>Built for the application</span></div><div><strong>Made in India</strong><span>Direct workshop oversight</span></div></div></div></section>
 
