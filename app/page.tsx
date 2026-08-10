@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { SiteFooter, SiteHeader } from "./components/SiteShell";
 import { IndustryShowcase } from "./components/IndustryShowcase";
 import { ContactForm } from "./components/ContactForm";
@@ -29,43 +28,24 @@ const productPhotos = [
   "/products/clean-cashew-grading-machine.png", "/products/clean-amla-seed-machine.png",
 ];
 
-const heroModels = [
-  { number: "01", title: "Belt Conveyor", photo: "/products/clean-belt-conveyor.png", application: "Material handling", configuration: "PVC / PU / rubber belt" },
-  { number: "02", title: "Z-Type Conveyor", photo: "/products/clean-incline-conveyor.png", application: "Elevated product transfer", configuration: "Modular incline belt" },
-  { number: "03", title: "Slat Conveyor", photo: "/products/clean-slat-conveyor.png", application: "Bottling & packaging", configuration: "SS / plastic slat chain" },
-  { number: "04", title: "Roller Conveyor", photo: "/products/clean-roller-conveyor.png", application: "Carton & pallet movement", configuration: "Gravity / powered rollers" },
-  { number: "05", title: "Mobile Conveyor", photo: "/products/clean-mobile-conveyor.png", application: "Flexible line loading", configuration: "Hydraulic height adjustment" },
-];
-
 export default function Home() {
-  const [activeModelIndex, setActiveModelIndex] = useState(0);
-  const activeModel = heroModels[activeModelIndex];
-
-  useEffect(() => {
-    const timer = window.setInterval(() => setActiveModelIndex((current) => (current + 1) % heroModels.length), 4200);
-    return () => window.clearInterval(timer);
-  }, []);
-
   return (
     <main>
       <SiteHeader />
 
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow"><span /> Engineered in Coimbatore · Made for industry</p>
-          <h1>Keep your<br />production <em>moving.</em></h1>
-          <p className="hero-lead">Conveyor and special purpose machine manufacturing for crop grading, material handling and custom industrial automation—built in India for dependable production.</p>
-          <div className="hero-actions"><a className="button" href="#contact">Start your project <span>↗</span></a><a className="text-link" href="#products">Explore solutions <span>↓</span></a></div>
-          <dl className="stats"><div><dt>Featured range</dt><dd>Processing, conveying & automation</dd></div><div><dt>Built to order</dt><dd>Designed around your line</dd></div><div><dt>Made in India</dt><dd>Engineered in Coimbatore</dd></div></dl>
+      <section className="reference-hero" id="top" aria-label="AK Engineering conveyor components">
+        <img src="/ak-engineering-components-hero.png" alt="AK Engineering conveyor components built for reliability and performance" />
+      </section>
+
+      <section className="home-intro" aria-label="AK Engineering company promise">
+        <div>
+          <p className="eyebrow"><span /> Precision-led engineering</p>
+          <h1>Engineered to Perform.<br /><em>Built to Last.</em></h1>
         </div>
-        <div className="machine-card" aria-label="Automatic conveyor model showcase">
-          <div className="plate-head"><span>Model / {activeModel.number}</span><span className="live"><i /> Live product showcase</span></div>
-          <div className="machine-visual conveyor-slider">
-            <img className="slider-machine-photo" key={activeModel.photo} src={activeModel.photo} alt={activeModel.title} />
-            <div className="slider-caption"><small>AK ENGINEERING</small><strong>{activeModel.title}</strong></div>
-            <div className="slider-dots" aria-label="Choose a conveyor model">{heroModels.map((model, index) => <button key={model.title} className={index === activeModelIndex ? "active" : ""} onClick={() => setActiveModelIndex(index)} aria-label={`Show ${model.title}`} />)}</div>
-          </div>
-          <div className="spec-grid"><div><small>APPLICATION</small><strong>{activeModel.application}</strong></div><div><small>CONFIGURATION</small><strong>{activeModel.configuration}</strong></div><div><small>PRIORITY</small><strong>Uptime & service life</strong></div><div><small>SUPPORT</small><strong>Direct engineering access</strong></div></div>
+        <div className="home-intro-copy">
+          <p>AK Engineering delivers reliable conveyors, SPMs, and custom machinery with precision and innovation.</p>
+          <p>We turn industrial requirements into practical, efficient solutions.</p>
+          <div className="hero-actions"><a className="button" href="#contact">Start your project <span>↗</span></a><a className="text-link" href="#products">Explore solutions <span>↓</span></a></div>
         </div>
       </section>
 
