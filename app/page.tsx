@@ -51,7 +51,7 @@ export default function Home() {
       <SiteHeader />
 
       <section className="client-hero" id="top" aria-roledescription="carousel" aria-label="AK Engineering solutions">
-        <div className="client-hero-track" key={activeSlide}>
+        <div className={`client-hero-track ${activeSlide === 2 ? "components-slide" : ""}`} key={activeSlide}>
           <div className="client-hero-copy">
             <p className="eyebrow"><span /> {slide.eyebrow}</p>
             <h1>{slide.title}</h1>
