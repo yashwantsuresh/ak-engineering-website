@@ -86,14 +86,20 @@
 .thank-you-page{display:flex;flex-direction:column;justify-content:center}.thank-you-page h1{max-width:900px}.thank-you-actions{display:flex;align-items:center;gap:28px;margin-top:12px}
 @media(max-width:800px){.contact-page-layout{grid-template-columns:1fr}.contact-form{padding:24px}.thank-you-actions{align-items:flex-start;flex-direction:column}}
 
-/* Client reference-led homepage hero and expanded company profile */
-.reference-hero{background:#fff;border-bottom:1px solid var(--line)}
-.reference-hero img{display:block;width:100%;height:auto;aspect-ratio:1680/909;object-fit:cover}
-.home-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:center;padding:82px max(6vw,32px);background:#fff}
-.home-intro h1{margin:0;font:900 clamp(48px,5.8vw,88px)/.9 var(--display);letter-spacing:-.035em;text-transform:uppercase;color:#30353a}
-.home-intro h1 em{font-style:normal;color:var(--red)}
-.home-intro-copy>p{max-width:680px;margin:0 0 12px;color:var(--muted);font-size:19px;line-height:1.65}
-.home-intro-copy .hero-actions{margin-top:30px}.home-intro .text-link{color:#3f454b;border-color:#c8cdd2}
+/* Client reference-led moving homepage carousel and expanded company profile */
+.client-hero{position:relative;height:min(660px,calc(100vh - 130px));min-height:540px;background:#fff;overflow:hidden;border-bottom:1px solid var(--line)}
+.client-hero-track{position:absolute;inset:0;display:grid;grid-template-columns:47% 53%;animation:heroSlideIn .7s cubic-bezier(.2,.7,.2,1) both}
+.client-hero-copy{position:relative;z-index:4;display:flex;flex-direction:column;justify-content:center;padding:64px 70px 88px max(7vw,62px);background:linear-gradient(90deg,#fff 0%,#fff 72%,#f8f8f8 100%)}
+.client-hero-copy .eyebrow{margin-bottom:20px}.client-hero-copy h1{max-width:640px;margin:0;color:#171c20;font:900 clamp(48px,5.2vw,82px)/.93 var(--display);letter-spacing:-.035em;text-transform:uppercase}
+.client-hero-copy>p:not(.eyebrow){max-width:540px;margin:26px 0;color:#50565c;font-size:18px;line-height:1.58}
+.hero-view-button{align-self:flex-start;display:inline-flex;align-items:center;gap:30px;margin-top:4px;padding:13px 19px;border:1px solid #d4d8dc;border-radius:2px;color:#30363b;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transition:.2s}.hero-view-button:hover{background:var(--red);border-color:var(--red);color:#fff}
+.client-hero-visual{min-width:0;overflow:hidden;background:#eceff1}.client-hero-visual img{width:100%;height:100%;display:block;object-fit:cover;animation:heroImageMove 5.2s ease-out both}
+.client-hero-wedge{position:absolute;z-index:3;left:39%;top:0;width:18%;height:100%;pointer-events:none}.client-hero-wedge:before,.client-hero-wedge i,.client-hero-wedge b{content:"";position:absolute;inset:-9% 0;display:block;clip-path:polygon(0 0,36% 0,100% 50%,36% 100%,0 100%,64% 50%)}
+.client-hero-wedge:before{left:0;background:#f3f4f5}.client-hero-wedge i{left:19%;background:linear-gradient(180deg,#e31b23,#b70d14)}.client-hero-wedge b{left:34%;background:#111d23;transform:scale(.98);transform-origin:center}
+.hero-arrow{position:absolute;z-index:6;top:50%;width:34px;height:34px;border:0;border-radius:50%;background:#30363caa;color:#fff;font-size:24px;line-height:30px;cursor:pointer;transform:translateY(-50%);transition:.2s}.hero-arrow:hover{background:var(--red)}.hero-arrow-left{left:22px}.hero-arrow-right{right:22px}
+.hero-pagination{position:absolute;z-index:6;left:50%;bottom:20px;display:flex;gap:7px;transform:translateX(-50%)}.hero-pagination button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:#c1c5c9;cursor:pointer;transition:.2s}.hero-pagination button.active{width:26px;border-radius:8px;background:var(--red)}
+@keyframes heroSlideIn{from{opacity:.3;transform:translateX(26px)}to{opacity:1;transform:translateX(0)}}
+@keyframes heroImageMove{from{transform:scale(1.04) translateX(18px)}to{transform:scale(1) translateX(0)}}
 .profile-intro{max-width:880px;margin:32px 0 68px;padding-left:28px;border-left:5px solid var(--red)}
 .profile-intro p{margin:0 0 8px;color:#4f565d;font-size:21px;line-height:1.55}
 .why-profile{display:grid;grid-template-columns:.55fr 1.1fr 1fr;gap:38px;align-items:start;padding:56px;background:var(--red);color:#fff}
@@ -105,5 +111,5 @@
 .profile-values h2{margin:56px 0 20px;font:800 clamp(32px,3.5vw,54px)/.98 var(--display);text-transform:uppercase}
 .profile-values p{margin:0;color:var(--muted);font-size:15px;line-height:1.8}
 .profile-strengths{margin-top:18px}
-@media(max-width:900px){.home-intro{grid-template-columns:1fr;gap:30px}.why-profile{grid-template-columns:1fr}.profile-values{grid-template-columns:1fr}.reference-hero img{aspect-ratio:auto;object-fit:contain}.profile-values article{min-height:0}.profile-values h2{margin-top:34px}}
-@media(max-width:620px){.reference-hero{overflow:hidden}.reference-hero img{width:165%;max-width:none;transform:translateX(-1%)}.home-intro{padding:58px 24px}.home-intro h1{font-size:46px}.home-intro-copy>p{font-size:16px}.profile-intro{margin-bottom:48px;padding-left:18px}.profile-intro p{font-size:17px}.why-profile{padding:34px 24px}.profile-values article{padding:30px 24px}}
+@media(max-width:900px){.client-hero{height:auto;min-height:0}.client-hero-track{position:relative;grid-template-columns:1fr;min-height:700px}.client-hero-copy{min-height:430px;padding:65px 52px 80px}.client-hero-visual{height:330px}.client-hero-wedge{left:0;top:38%;width:100%;height:25%;transform:rotate(90deg);transform-origin:center}.hero-arrow{top:62%}.why-profile{grid-template-columns:1fr}.profile-values{grid-template-columns:1fr}.profile-values article{min-height:0}.profile-values h2{margin-top:34px}}
+@media(max-width:620px){.client-hero-track{min-height:650px}.client-hero-copy{min-height:390px;padding:54px 36px 76px}.client-hero-copy h1{font-size:45px}.client-hero-copy>p:not(.eyebrow){font-size:16px}.client-hero-visual{height:260px}.client-hero-wedge{top:42%;height:20%}.hero-arrow{top:64%;width:30px;height:30px}.hero-arrow-left{left:10px}.hero-arrow-right{right:10px}.profile-intro{margin-bottom:48px;padding-left:18px}.profile-intro p{font-size:17px}.why-profile{padding:34px 24px}.profile-values article{padding:30px 24px}}

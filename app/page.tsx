@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { SiteFooter, SiteHeader } from "./components/SiteShell";
 import { IndustryShowcase } from "./components/IndustryShowcase";
 import { ContactForm } from "./components/ContactForm";
@@ -28,25 +29,41 @@ const productPhotos = [
   "/products/clean-cashew-grading-machine.png", "/products/clean-amla-seed-machine.png",
 ];
 
+const homeSlides = [
+  { eyebrow: "Conveyors", title: "Reliable Conveyors. Built for Production.", description: "AK Engineering delivers reliable conveyor solutions with precision and innovation.", image: "/hero/conveyor-line.png", imageAlt: "Automated industrial conveyor line" },
+  { eyebrow: "SPMs & Custom Machinery", title: "Practical Automation. Efficient Results.", description: "We turn industrial requirements into practical, efficient custom machinery solutions.", image: "/hero/custom-spm.png", imageAlt: "Custom special purpose machine and conveyor cell" },
+  { eyebrow: "Conveyor Components", title: "Precision Components. Dependable Movement.", description: "Quality, precision, and customer requirements guide every solution we deliver.", image: "/hero/conveyor-components.png", imageAlt: "Industrial conveyor components in a honeycomb display" },
+];
+
 export default function Home() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setActiveSlide((current) => (current + 1) % homeSlides.length), 5200);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const slide = homeSlides[activeSlide];
+  const showSlide = (index: number) => setActiveSlide((index + homeSlides.length) % homeSlides.length);
+
   return (
     <main>
       <SiteHeader />
 
-      <section className="reference-hero" id="top" aria-label="AK Engineering conveyor components">
-        <img src="/ak-engineering-components-hero.png" alt="AK Engineering conveyor components built for reliability and performance" />
-      </section>
-
-      <section className="home-intro" aria-label="AK Engineering company promise">
-        <div>
-          <p className="eyebrow"><span /> Precision-led engineering</p>
-          <h1>Engineered to Perform.<br /><em>Built to Last.</em></h1>
+      <section className="client-hero" id="top" aria-roledescription="carousel" aria-label="AK Engineering solutions">
+        <div className="client-hero-track" key={activeSlide}>
+          <div className="client-hero-copy">
+            <p className="eyebrow"><span /> {slide.eyebrow}</p>
+            <h1>{slide.title}</h1>
+            <p>{slide.description}</p>
+            <a className="hero-view-button" href="#products">View solutions <span>↗</span></a>
+          </div>
+          <div className="client-hero-wedge" aria-hidden="true"><i /><b /></div>
+          <div className="client-hero-visual"><img src={slide.image} alt={slide.imageAlt} /></div>
         </div>
-        <div className="home-intro-copy">
-          <p>AK Engineering delivers reliable conveyors, SPMs, and custom machinery with precision and innovation.</p>
-          <p>We turn industrial requirements into practical, efficient solutions.</p>
-          <div className="hero-actions"><a className="button" href="#contact">Start your project <span>↗</span></a><a className="text-link" href="#products">Explore solutions <span>↓</span></a></div>
-        </div>
+        <button className="hero-arrow hero-arrow-left" onClick={() => showSlide(activeSlide - 1)} aria-label="Previous slide">‹</button>
+        <button className="hero-arrow hero-arrow-right" onClick={() => showSlide(activeSlide + 1)} aria-label="Next slide">›</button>
+        <div className="hero-pagination" aria-label="Choose a homepage slide">{homeSlides.map((item, index) => <button key={item.title} onClick={() => showSlide(index)} className={index === activeSlide ? "active" : ""} aria-label={`Show slide ${index + 1}`} />)}</div>
       </section>
 
       <section className="ticker" aria-label="Core services"><span>TAMARIND PROCESSING</span><i>◆</i><span>PEPPER CONVEYING</span><i>◆</i><span>BOTTLING CONVEYORS</span><i>◆</i><span>CHAPATI MACHINES</span><i>◆</i><span>COMMERCIAL BURNERS</span></section>
