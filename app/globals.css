@@ -158,3 +158,26 @@ body{opacity:1;transform:none}.page-ready main{animation:safePageEnter .45s ease
 footer{grid-template-columns:1.25fr 1fr 1.15fr .9fr auto}.footer-map{color:var(--red);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.footer-social{display:flex;flex-direction:column;gap:9px}.footer-social strong{margin-bottom:4px}.footer-social a{display:flex;align-items:center;gap:8px;color:#4c535a;font-size:11px;font-weight:700}.footer-social a:hover,.footer-map:hover{color:var(--red)}.footer-social i{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:#202428;color:#fff;font:800 9px Arial;font-style:normal}.footer-social a:hover i{background:var(--red)}
 @media(max-width:1000px){footer{grid-template-columns:1fr 1fr}.profile-clients{padding:56px 30px}}
 @media(max-width:620px){.product-marquee{width:calc(100% + 44px);margin-left:-22px}.marquee-product{width:220px;flex-basis:220px}.marquee-product img{height:140px}.product-marquee-track{animation-duration:45s}.profile-clients{margin-top:60px;padding:48px 18px}footer{grid-template-columns:1fr}}
+
+/* Clearly visible mobile hero and scroll motion */
+@media(max-width:900px){
+  .client-hero-track{animation:mobileSlideEnter .72s cubic-bezier(.18,.75,.22,1) both}
+  .client-hero-copy .eyebrow{animation:mobileCopyRise .55s .08s both}
+  .client-hero-copy h1{animation:mobileCopyRise .65s .16s both}
+  .client-hero-copy>p:not(.eyebrow){animation:mobileCopyRise .65s .25s both}
+  .client-hero-copy .hero-view-button{animation:mobileCopyRise .6s .34s both}
+  .client-hero-visual{animation:mobileVisualReveal .8s .18s cubic-bezier(.18,.75,.22,1) both}
+  .client-hero-visual img{animation:mobileImageMove 5.2s ease-out both}
+  .hero-pagination button.active{animation:mobileDotPulse 1.4s ease-in-out infinite}
+  @keyframes mobileSlideEnter{from{opacity:.25}to{opacity:1}}
+  @keyframes mobileCopyRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  @keyframes mobileVisualReveal{from{opacity:0;transform:translateY(32px);clip-path:inset(22% 0 0)}to{opacity:1;transform:none;clip-path:inset(0)}}
+  @keyframes mobileImageMove{from{transform:scale(1.09) translateX(18px)}to{transform:scale(1) translateX(0)}}
+  @keyframes mobileDotPulse{0%,100%{box-shadow:0 0 0 0 #e31b2340}50%{box-shadow:0 0 0 6px #e31b2300}}
+}
+@media(max-width:620px){
+  .reveal-item{opacity:0;filter:blur(2px);transform:translateY(34px) scale(.98);transition-duration:.72s}
+  .reveal-item.is-visible{opacity:1;filter:none;transform:none}
+  .section-heading>div,.clients-heading>div{animation:none}
+  .client-hero-copy{overflow:hidden}
+}
