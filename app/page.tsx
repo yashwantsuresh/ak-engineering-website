@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { SiteFooter, SiteHeader } from "./components/SiteShell";
 import { IndustryShowcase } from "./components/IndustryShowcase";
 import { ContactForm } from "./components/ContactForm";
+import { ClientCarousel } from "./components/ClientCarousel";
 
 const products = [
   ["01", "Belt Conveyor", "PVC, PU or rubber belt. MS / SS frame, 300-1200 mm width, variable speed and up to 100 kg/m load capacity."],
@@ -92,7 +93,7 @@ export default function Home() {
 
       <section className="section industries" id="industries"><div className="section-heading compact"><div><p className="eyebrow"><span /> Industries served</p><h2>Ready for the<br /><em>real world.</em></h2></div><p>Versatile solutions for production environments where hygiene, precision, durability and uptime matter.</p></div><IndustryShowcase /></section>
 
-      <section className="section clients" id="clients"><div className="clients-heading"><div><p className="eyebrow"><span /> Our clients</p><h2>Trusted on the<br /><em>production floor.</em></h2></div><p>Engineering partnerships built through practical solutions, dependable execution and responsive support.</p></div><div className="client-logo-grid"><article><div><img src="/clients/alphacraft.png" alt="Alphacraft logo" /></div><strong>Alphacraft</strong></article><article><div><img src="/clients/poomagal.png" alt="Poomagal logo" /></div><strong>Poomagal</strong></article><article><div><img src="/clients/emerald.png" alt="Emerald logo" /></div><strong>Emerald</strong></article><article><div><img src="/clients/golden-spices.png" alt="Golden Spices logo" /></div><strong>Golden Spices</strong></article></div></section>
+      <section className="section clients" id="clients"><div className="clients-heading"><div><p className="eyebrow"><span /> Our clientele</p><h2>Our Clients</h2></div><p>Trusted engineering partnerships built through practical solutions, dependable execution and responsive support.</p></div><ClientCarousel /></section>
 
       <section className="about" id="about"><div className="about-visual"><div className="about-logo-panel"><img src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering logo" /></div><p>COIMBATORE · TAMIL NADU · INDIA</p></div><div className="about-copy"><p className="eyebrow"><span /> About the workshop</p><h2>Engineering that starts on the floor.</h2><p>AK Engineering designs and builds conveyors, special purpose machines and automation solutions for production teams that cannot afford avoidable downtime.</p><p>By combining custom fabrication with a complete range of conveyor technologies and components, we make it easier to specify, build, maintain and expand a dependable line.</p><div className="about-points"><div><strong>Process-first</strong><span>Built for the application</span></div><div><strong>Made in India</strong><span>Direct workshop oversight</span></div></div></div></section>
 
