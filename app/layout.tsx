@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { InteractionLayer } from "./components/InteractionLayer";
 
 export const metadata: Metadata = {
   title: "AK Engineering | Conveyors, Automation & Special Purpose Machines",
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body>{children}<InteractionLayer /></body></html>;
 }
