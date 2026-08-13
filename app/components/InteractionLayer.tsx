@@ -8,8 +8,12 @@ export function InteractionLayer() {
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.body.classList.add("page-ready");
     const revealTargets = document.querySelectorAll("main section, main article, main .content-grid, main .catalogue-grid, main .profile-intro, main .profile-stats, main .industry-showcase, footer > *");
-    revealTargets.forEach((element) => element.classList.add("reveal-item"));
+    revealTargets.forEach((element, index) => {
+      element.classList.add("reveal-item");
+      (element as HTMLElement).style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
+    });
     if (reduced) revealTargets.forEach((element) => element.classList.add("is-visible"));
     else {
       const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
@@ -26,7 +30,7 @@ export function InteractionLayer() {
       };
       update();
       window.addEventListener("scroll", update, { passive: true });
-      return () => { observer.disconnect(); window.removeEventListener("scroll", update); };
+      return () => { observer.disconnect(); window.removeEventListener("scroll", update); document.body.classList.remove("page-ready"); };
     }
   }, []);
 
