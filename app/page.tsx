@@ -30,9 +30,9 @@ const productPhotos = [
 ];
 
 const homeSlides = [
-  { eyebrow: "Conveyors", title: "Reliable Conveyors. Built for Production.", description: "AK Engineering delivers reliable conveyor solutions with precision and innovation.", image: "/hero/conveyor-line.png", imageAlt: "Automated industrial conveyor line" },
-  { eyebrow: "SPMs & Custom Machinery", title: "Practical Automation. Efficient Results.", description: "We turn industrial requirements into practical, efficient custom machinery solutions.", image: "/hero/custom-spm.png", imageAlt: "Custom special purpose machine and conveyor cell" },
-  { eyebrow: "Conveyor Components", title: "Precision Components. Dependable Movement.", description: "Quality, precision, and customer requirements guide every solution we deliver.", image: "/hero/conveyor-components.png", imageAlt: "Industrial conveyor components in a honeycomb display" },
+  { eyebrow: "Conveyors", title: "Reliable Conveyors. Built for Production.", description: "AK Engineering delivers reliable conveyor solutions with precision and innovation.", image: "/hero/conveyor-line-v2.png", imageAlt: "Modern automated food-grade conveyor production line" },
+  { eyebrow: "SPMs & Custom Machinery", title: "Practical Automation. Efficient Results.", description: "We turn industrial requirements into practical, efficient custom machinery solutions.", image: "/hero/custom-spm-v2.png", imageAlt: "Custom special-purpose automation machine and conveyor cell" },
+  { eyebrow: "Conveyor Components", title: "Precision Components. Dependable Movement.", description: "Quality, precision, and customer requirements guide every solution we deliver.", image: "/hero/conveyor-components-v2.png", imageAlt: "Precision roller, modular belt, chain and conveyor components" },
 ];
 
 export default function Home() {
