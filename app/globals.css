@@ -126,7 +126,7 @@
 .scroll-progress{position:fixed;z-index:100;top:0;left:0;width:100%;height:3px;background:var(--red);transform-origin:left center;pointer-events:none}
 .back-to-top{position:fixed;z-index:40;right:24px;bottom:24px;width:44px;height:44px;border:1px solid #ffffff66;background:#17191ddd;color:#fff;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:.25s}.back-to-top.visible{opacity:1;visibility:visible;transform:none}.back-to-top:hover{background:var(--red);border-color:var(--red);transform:translateY(-3px)}
 .reveal-item{opacity:0;filter:blur(3px);transform:translateY(42px) scale(.985);transition:opacity .75s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms),transform .75s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms),filter .75s ease var(--reveal-delay,0ms)}.reveal-item.is-visible{opacity:1;filter:none;transform:none}
-body{opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s ease}body.page-ready{opacity:1;transform:none}
+body{opacity:1;transform:none}.page-ready main{animation:safePageEnter .45s ease both}@keyframes safePageEnter{from{opacity:.72;transform:translateY(6px)}to{opacity:1;transform:none}}
 .site-header{transition:box-shadow .3s,background .3s;backdrop-filter:blur(12px);background:#ffffffed}
 .ticker{justify-content:flex-start;overflow:hidden}.ticker span,.ticker i{flex:0 0 auto;animation:tickerFlow 16s linear infinite}.ticker span{margin-left:5vw}.ticker:hover span,.ticker:hover i{animation-play-state:paused}
 @keyframes tickerFlow{to{transform:translateX(-260px)}}
