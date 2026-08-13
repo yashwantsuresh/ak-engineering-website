@@ -1,5 +1,6 @@
 import { SiteFooter, SiteHeader } from "../components/SiteShell";
 import { CountUp } from "../components/CountUp";
+import { ClientCarousel } from "../components/ClientCarousel";
 
 export default function ProfilePage() {
   return <>
@@ -43,6 +44,7 @@ export default function ProfilePage() {
         <article><h2>Reliable execution</h2><p>Practical engineering, robust fabrication, and close attention to performance at every stage.</p></article>
         <article><h2>Cost-effective value</h2><p>Smart, maintainable solutions designed for long service life and a strong return on investment.</p></article>
       </div>
+      <section className="profile-clients"><div className="clients-heading"><div><p className="eyebrow"><span /> Our clientele</p><h2>Our Clients</h2></div><p>Trusted partnerships built through practical engineering, dependable execution and responsive support.</p></div><ClientCarousel /></section>
     </main>
     <SiteFooter />
   </>;

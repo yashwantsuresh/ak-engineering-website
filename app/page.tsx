@@ -5,6 +5,7 @@ import { SiteFooter, SiteHeader } from "./components/SiteShell";
 import { IndustryShowcase } from "./components/IndustryShowcase";
 import { ContactForm } from "./components/ContactForm";
 import { ClientCarousel } from "./components/ClientCarousel";
+import { ProductMarquee } from "./components/ProductMarquee";
 
 const products = [
   ["01", "Belt Conveyor", "PVC, PU or rubber belt. MS / SS frame, 300-1200 mm width, variable speed and up to 100 kg/m load capacity."],
@@ -71,9 +72,8 @@ export default function Home() {
 
       <section className="section products" id="products">
         <div className="section-heading"><div><p className="eyebrow"><span /> What we build</p><h2>One line.<br /><em>Every solution.</em></h2></div><p>From the moving surface to the supporting component, we engineer around the product you handle, the speed you need and the realities of your shop floor.</p></div>
-        <div className="product-grid">
-          {products.map(([number, title, description], index) => <article className="product-card" key={number}><span className="number">{number}</span><div className="product-photo"><img src={productPhotos[index]} alt={title} /></div><h3>{title}</h3><p>{description}</p><a href="#contact">Discuss this solution <span>↗</span></a></article>)}
-        </div>
+        <ProductMarquee />
+        <a className="button range-button" href="/products">View full product range <span>→</span></a>
       </section>
 
       <section className="capabilities" id="capabilities">
