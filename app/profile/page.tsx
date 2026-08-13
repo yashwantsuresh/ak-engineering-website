@@ -1,4 +1,5 @@
 import { SiteFooter, SiteHeader } from "../components/SiteShell";
+import { CountUp } from "../components/CountUp";
 
 export default function ProfilePage() {
   return <>
@@ -12,9 +13,9 @@ export default function ProfilePage() {
       </div>
 
       <section className="profile-stats" aria-label="AK Engineering company highlights">
-        <article><strong>50+</strong><span>Employees</span></article>
-        <article><strong>50+</strong><span>Applications</span></article>
-        <article><strong>50+</strong><span>Satisfied Customers</span></article>
+        <article><CountUp target={10} /><span>Employees</span></article>
+        <article><CountUp target={50} /><span>Applications</span></article>
+        <article><CountUp target={50} /><span>Satisfied Customers</span></article>
         <article><strong>PS/MS</strong><span>&amp; R&amp;D Centre</span></article>
       </section>
 

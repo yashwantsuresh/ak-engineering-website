@@ -1,22 +1,13 @@
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const links = [
-  ["Home", "/"], ["Profile", "/profile"], ["Products", "/products"],
-  ["Industries we serve", "/industries"], ["Downloads", "/downloads"], ["Contact Us", "/contact"],
-];
+const links = [["Home", "/"], ["Profile", "/profile"], ["Products", "/products"], ["Industries we serve", "/industries"], ["Downloads", "/downloads"], ["Contact Us", "/contact"]];
+const machineLinks = ["Belt Conveyor", "Z-Type Conveyor", "Modular Conveyor", "Slat Conveyor", "Roller Conveyor", "Food Processing Machines"];
+const componentLinks = ["Conveyor Belts", "Conveyor Rollers", "Conveyor Guides", "Engineering Plastics"];
 
 export function SiteHeader() {
   const pathname = usePathname();
-  return <><div className="desktop-topbar"><span>Conveyors · Special Purpose Machines · Automation</span><div><a href="tel:+919952551805">+91 99525 51805</a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=akengineeringscbe@gmail.com&su=AK%20Engineering%20Enquiry" target="_blank" rel="noreferrer">akengineeringscbe@gmail.com</a></div></div><header className="site-header">
-    <Link className="brand" href="/" aria-label="AK Engineering home"><img className="brand-logo" src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering" /></Link>
-    <nav aria-label="Primary navigation">{links.map(([label, href]) => <Link className={`${pathname === href ? "active" : ""} ${label === "Contact Us" ? "nav-contact" : ""}`.trim()} href={href} key={href}>{label}</Link>)}</nav>
-    <details className="mobile-menu"><summary aria-label="Open navigation menu">Menu</summary><div className="mobile-menu-links">{links.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href}>{label}</Link>)}</div></details>
-  </header></>;
+  return <><div className="desktop-topbar"><span>Conveyors · Special Purpose Machines · Automation</span><div><a href="tel:+919952551805">+91 99525 51805</a><a href="mailto:akengineeringscbe@gmail.com">akengineeringscbe@gmail.com</a></div></div><header className="site-header"><Link className="brand" href="/" aria-label="AK Engineering home"><img className="brand-logo" src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering" /></Link><nav aria-label="Primary navigation">{links.map(([label, href]) => label === "Products" ? <div className="nav-products" key={href}><Link className={pathname === href ? "active" : ""} href={href}>Products <b>⌄</b></Link><div className="product-mega"><div><small>Machines</small>{machineLinks.map((item) => <Link href="/products#machines" key={item}>{item}<span>↗</span></Link>)}</div><div><small>Components</small>{componentLinks.map((item) => <Link href="/products#components" key={item}>{item}<span>↗</span></Link>)}</div><Link className="mega-all" href="/products">View full product range <span>→</span></Link></div></div> : <Link className={`${pathname === href ? "active" : ""} ${label === "Contact Us" ? "nav-contact" : ""}`.trim()} href={href} key={href}>{label}</Link>)}</nav><details className="mobile-menu"><summary>Menu</summary><div className="mobile-menu-links">{links.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href}>{label}</Link>)}<div className="mobile-product-shortcuts"><Link href="/products#machines">↳ Machines</Link><Link href="/products#components">↳ Components</Link></div></div></details></header></>;
 }
-
-export function SiteFooter() {
-  return <footer><div className="brand footer-brand"><img className="brand-logo footer-logo" src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering" /></div><div><strong>Workshop</strong><p>Pattanam Road, Sulur<br />Coimbatore, Tamil Nadu 641016</p></div><div><strong>Connect</strong><p><a href="tel:+919952551805">+91 99525 51805</a><br /><a href="https://mail.google.com/mail/?view=cm&fs=1&to=akengineeringscbe@gmail.com&su=AK%20Engineering%20Enquiry" target="_blank" rel="noreferrer">akengineeringscbe@gmail.com</a></p></div><p className="copyright">© 2026 AK Engineering</p></footer>;
-}
+export function SiteFooter() { return <footer><div className="brand footer-brand"><img className="brand-logo footer-logo" src="/ak-engineering-logo-cropped.jpeg" alt="AK Engineering" /></div><div><strong>Workshop</strong><p>Pattanam Road, Sulur<br />Coimbatore, Tamil Nadu 641016</p></div><div><strong>Connect</strong><p><a href="tel:+919952551805">+91 99525 51805</a><br /><a href="mailto:akengineeringscbe@gmail.com">akengineeringscbe@gmail.com</a></p></div><p className="copyright">© 2026 AK Engineering</p></footer>; }
